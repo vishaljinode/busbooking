@@ -44,4 +44,5 @@ git push -u origin main -->
 #Deploy kaise kare?
 ng build --configuration=production --base-href /busbooking/ --deploy-url /busbooking/
 ngh --dir=dist/busbookings   
-"# busbooking" 
+
+

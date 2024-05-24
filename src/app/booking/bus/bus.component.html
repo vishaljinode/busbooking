@@ -3,44 +3,83 @@
         <div class="col">
             <div class="bus">
                 <div class="seats-container">
-                    <div class="seat" id="seat1" (click)="seatClicked(1)">1</div>
-                    <div class="seat" id="seat2" (click)="seatClicked(2)">2</div>
-                    <div class="seat" id="seat3" (click)="seatClicked(3)">3</div>
-                    <div class="seat" id="seat4" (click)="seatClicked(4)">4</div>
-                    <div class="seat" id="seat5" (click)="seatClicked(5)">5</div>
-                    <div class="seat" id="seat6" (click)="seatClicked(6)">6</div>
+                    <div class="seat" id="seat1" (click)="seatClicked(1,confirmModal)">1</div>
+                    <div class="seat" id="seat2" (click)="seatClicked(2,confirmModal)">2</div>
+                    <div class="seat" id="seat3" (click)="seatClicked(3,confirmModal)">3</div>
+                    <div class="seat" id="seat4" (click)="seatClicked(4,confirmModal)">4</div>
+                    <div class="seat" id="seat5" (click)="seatClicked(5,confirmModal)">5</div>
+                    <div class="seat" id="seat6" (click)="seatClicked(6,confirmModal)">6</div>
                 </div>
 
                 <div class="seats-container2">
-                    <div class="seat" id="seat7" (click)="seatClicked(7)">7</div>
-                    <div class="seat" id="seat8" (click)="seatClicked(8)">8</div>
-                    <div class="seat" id="seat9" (click)="seatClicked(9)">9</div>
-                    <div class="seat" id="seat10" (click)="seatClicked(10)">10</div>
-                    <div class="seat" id="seat11" (click)="seatClicked(11)">11</div>
-                    <div class="seat" id="seat12" (click)="seatClicked(12)">12</div>
+                    <div class="seat" id="seat7" (click)="seatClicked(7,confirmModal)">7</div>
+                    <div class="seat" id="seat8" (click)="seatClicked(8,confirmModal)">8</div>
+                    <div class="seat" id="seat9" (click)="seatClicked(9,confirmModal)">9</div>
+                    <div class="seat" id="seat10" (click)="seatClicked(10,confirmModal)">10</div>
+                    <div class="seat" id="seat11" (click)="seatClicked(11,confirmModal)">11</div>
+                    <div class="seat" id="seat12" (click)="seatClicked(12,confirmModal)">12</div>
                 </div>
 
                 <div class="seats-container3">
-                    <div class="seat" id="seat13" (click)="seatClicked(13)">13</div>
-                    <div class="seat" id="seat14" (click)="seatClicked(14)">14</div>
-                    <div class="seat" id="seat15" (click)="seatClicked(15)">15</div>
-                    <div class="seat" id="seat16" (click)="seatClicked(16)">16</div>
-                    <div class="seat" id="seat17" (click)="seatClicked(17)">17</div>
-                    <div class="seat" id="seat18" (click)="seatClicked(18)">18</div>
+                    <div class="seat" id="seat13" (click)="seatClicked(13,confirmModal)">13</div>
+                    <div class="seat" id="seat14" (click)="seatClicked(14,confirmModal)">14</div>
+                    <div class="seat" id="seat15" (click)="seatClicked(15,confirmModal)">15</div>
+                    <div class="seat" id="seat16" (click)="seatClicked(16,confirmModal)">16</div>
+                    <div class="seat" id="seat17" (click)="seatClicked(17,confirmModal)">17</div>
+                    <div class="seat" id="seat18" (click)="seatClicked(18,confirmModal)">18</div>
                 </div>
+
                 <div class="seats-container4">
-                    <div class="seat" id="seat19" (click)="seatClicked(19)">19</div>
-                    <div class="seat" id="seat20" (click)="seatClicked(20)">20</div>
-                    <div class="seat" id="seat21" (click)="seatClicked(21)">21</div>
-                    <div class="seat" id="seat22" (click)="seatClicked(22)">22</div>
-                    <div class="seat" id="seat23" (click)="seatClicked(23)">23</div>
-                    <div class="seat" id="seat24" (click)="seatClicked(24)">24</div>
+                    <div class="seat" id="seat19" (click)="seatClicked(19,confirmModal)">19</div>
+                    <div class="seat" id="seat20" (click)="seatClicked(20,confirmModal)">20</div>
+                    <div class="seat" id="seat21" (click)="seatClicked(21,confirmModal)">21</div>
+                    <div class="seat" id="seat22" (click)="seatClicked(22,confirmModal)">22</div>
+                    <div class="seat" id="seat23" (click)="seatClicked(23,confirmModal)">23</div>
+                    <div class="seat" id="seat24" (click)="seatClicked(24,confirmModal)">24</div>
                 </div>
             </div>
         </div>
         <div class="col">
-     
-              
+            <div class="info">
+                <h2>This is Booking information</h2>
+                <ng-container>
+                    <label>Selected Date: {{ selectedDate | date: 'dd/MM/yyyy' }}</label>
+                </ng-container>
+                <br>
+
+                <ng-container>
+                    <mat-form-field>
+                        <mat-label>Select Date:</mat-label>
+                        <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate" placeholder="DD/MM/YYYY">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <h4>Booked Seats : <strong>0</strong></h4>
+                    <h4>Available Seats : <strong>24</strong></h4>                  
+
+               </ng-container>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+<ng-template #confirmModal let-modal>
+    <div class="deletemodal">    
+        <h4>Which Seat Do You Want To Book?</h4>
+      
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><mat-icon matPrefix>chair</mat-icon></span>
+                <input type="text" class="form-control" placeholder="Seat No." aria-label="Seat No." aria-describedby="basic-addon1">
+              </div>
+      
+        <div>
+            <button mat-stroked-button class="" color="danger" (click)="closemodal();selectedSeat=0" style="margin-right: 10px;">Cancel</button>
+            <button mat-raised-button class="" color="primary" (click)="bookSeat();modal.close('Close click')">Book</button>
+        </div>
+    </div>
+</ng-template>
