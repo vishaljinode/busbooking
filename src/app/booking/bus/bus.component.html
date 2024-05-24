@@ -70,16 +70,17 @@
 
 <ng-template #confirmModal let-modal>
     <div class="deletemodal">    
-        <h4>Which Seat Do You Want To Book?</h4>
+        <h4>Please Conform Seat No.</h4>
       
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><mat-icon matPrefix>chair</mat-icon></span>
-                <input type="text" class="form-control" placeholder="Seat No." aria-label="Seat No." aria-describedby="basic-addon1">
-              </div>
+                <input type="number" class="form-control" placeholder="Seat No." aria-label="Seat No." [(ngModel)]="conformSeat" aria-describedby="basic-addon1" oninput="this.value = this.value.slice(0, 2)">
+
+            </div>
       
         <div>
             <button mat-stroked-button class="" color="danger" (click)="closemodal();selectedSeat=0" style="margin-right: 10px;">Cancel</button>
-            <button mat-raised-button class="" color="primary" (click)="bookSeat();modal.close('Close click')">Book</button>
+            <button mat-raised-button class="" color="primary" (click)="bookSeat();modal.close('Close click')" [disabled]="conformSeat==undefined">Book</button>
         </div>
     </div>
 </ng-template>
