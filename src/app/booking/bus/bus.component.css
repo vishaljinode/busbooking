@@ -1,0 +1,87 @@
+/* Add this CSS in your component's CSS file or styles.scss */
+
+.bus {
+    display: flex;    
+    /* align-items: flex-start;  */
+    width: 300px;
+    background-color: #f3f3f3;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px
+  }
+  
+  .driver-seat {
+    width: 40px;
+    height: 40px;
+    background-color: #b0bec5;
+    border: 1px solid #000;
+    /* margin-bottom: 10px; */
+    cursor: pointer;
+    /* Move the driver seat above seats-container4 */
+    position: relative;
+  }
+  
+  .seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .seats-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-left: 15px;
+  }
+  
+
+  .seats-container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+  }
+
+  .seats-container4 {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-left: 15px;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 80px;
+    background-color: #c5cae9;
+    border: 1px solid #000;
+    margin: 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Add this line to center the content vertically */
+  }
+  
+
+
+  .info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.info h2 {
+    margin-top: 0;
+
+}
+
+.info p {
+    margin: 5px 0;
+
+}
