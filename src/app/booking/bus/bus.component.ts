@@ -28,6 +28,9 @@ export class BusComponent {
   }
 
   seatClicked(seatNumber: number, content: any) {
+
+    console.log("content--->",content)
+    
     this.resetModalFields();
     this.needName = false;
 

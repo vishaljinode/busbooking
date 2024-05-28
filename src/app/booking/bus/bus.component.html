@@ -159,3 +159,49 @@
         </div>
     </div>
 </ng-template>
+
+
+
+
+<ng-template #cancelModal let-modal>
+  <div class="deletemodal">
+      <h4>Please Conform Seat No.</h4>
+
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><mat-icon
+                  matPrefix>chair</mat-icon></span>
+          <input type="number" class="form-control" placeholder="Seat No."
+              aria-label="Seat No." [(ngModel)]="conformSeat"
+              aria-describedby="basic-addon1"
+              oninput="this.value = this.value.slice(0, 2)">
+      </div>
+
+    
+      <span (click)="nametoggle()" [ngStyle]="needName ? {'color':'red'} : {'color' : 'green'}" style="font-weight: bold;"> {{needName ? "Not Need Name ?" : "Need Name ?" }}</span>
+      <br>
+      <ng-container *ngIf="needName">
+      <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Name</span>
+          <input type="text" class="form-control" placeholder="Enter Full Name..."
+              aria-label="Enter Full Name..." [(ngModel)]="name"
+              aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Mobile Number</span>
+              <input type="text" class="form-control" placeholder="9998805656"
+                  aria-label="Enter Mobile Number" [(ngModel)]="mobileNo"
+                  aria-describedby="basic-addon1"
+                  oninput="this.value = this.value.slice(0, 10)">
+      </div>
+      </ng-container> 
+      <span style="color: red;" *ngIf="mobileNo != undefined && mobileNo.length != 0 && mobileNo.length < 10">Mobile should be 10 digit</span>
+      <div>
+          <button mat-stroked-button class color="danger"
+              (click)="closemodal();selectedSeat=0"
+              style="margin-right: 10px;">Cancel</button>
+          <button mat-raised-button class color="primary"
+              (click)="bookSeat();modal.close('Close click')"
+              [disabled]="isBookingValid()">Book</button>
+      </div>
+  </div>
+</ng-template>
