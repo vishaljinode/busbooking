@@ -17,6 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { MatIconModule } from '@angular/material/icon';
 
+import { DatePipe } from '@angular/common';
+
 
 
 
@@ -48,7 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
    
    
   ],
-  providers: [ { provide: DateAdapter, useClass: NativeDateAdapter }],
+  providers: [ { provide: DateAdapter, useClass: NativeDateAdapter },DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,207 +1,226 @@
 <div class="container text-center mt-5">
-    <div class="row">
-        <div class="col">
-            <div class="bus">
-                <div class="seats-container">
-                    <div class="seat" id="seat1"
-                      (click)="seatClicked(1, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(1)}">1</div>
-                    <div class="seat" id="seat2"
-                      (click)="seatClicked(2, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(2)}">2</div>
-                    <div class="seat" id="seat3"
-                      (click)="seatClicked(3, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(3)}">3</div>
-                    <div class="seat" id="seat4"
-                      (click)="seatClicked(4, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(4)}">4</div>
-                    <div class="seat" id="seat5"
-                      (click)="seatClicked(5, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(5)}">5</div>
-                    <div class="seat" id="seat6"
-                      (click)="seatClicked(6, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(6)}">6</div>
-                  </div>
-                  
-                  <div class="seats-container2">
-                    <div class="seat" id="seat7"
-                      (click)="seatClicked(7, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(7)}">7</div>
-                    <div class="seat" id="seat8"
-                      (click)="seatClicked(8, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(8)}">8</div>
-                    <div class="seat" id="seat9"
-                      (click)="seatClicked(9, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(9)}">9</div>
-                    <div class="seat" id="seat10"
-                      (click)="seatClicked(10, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(10)}">10</div>
-                    <div class="seat" id="seat11"
-                      (click)="seatClicked(11, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(11)}">11</div>
-                    <div class="seat" id="seat12"
-                      (click)="seatClicked(12, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(12)}">12</div>
-                  </div>
-
-
-
-                  <div class="seats-container3">
-                    <div class="seat" id="seat13"
-                      (click)="seatClicked(13, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(13)}">13</div>
-                    <div class="seat" id="seat14"
-                      (click)="seatClicked(14, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(14)}">14</div>
-                    <div class="seat" id="seat15"
-                      (click)="seatClicked(15, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(15)}">15</div>
-                    <div class="seat" id="seat16"
-                      (click)="seatClicked(16, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(16)}">16</div>
-                    <div class="seat" id="seat17"
-                      (click)="seatClicked(17, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(17)}">17</div>
-                    <div class="seat" id="seat18"
-                      (click)="seatClicked(18, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(18)}">18</div>
-                  </div>
-
-
-
-                  
-                  <div class="seats-container4">
-                    <div class="seat" id="seat19"
-                      (click)="seatClicked(19, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(19)}">19</div>
-                    <div class="seat" id="seat20"
-                      (click)="seatClicked(20, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(20)}">20</div>
-                    <div class="seat" id="seat21"
-                      (click)="seatClicked(21, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(21)}">21</div>
-                    <div class="seat" id="seat22"
-                      (click)="seatClicked(22, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(22)}">22</div>
-                    <div class="seat" id="seat23"
-                      (click)="seatClicked(23, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(23)}">23</div>
-                    <div class="seat" id="seat24"
-                      (click)="seatClicked(24, confirmModal)"
-                      [ngClass]="{'booked': isSeatBooked(24)}">24</div>
-                  </div>
-            </div>
+  <div class="row">
+    <div class="col">
+      <div class="bus">
+        <div class="seats-container">
+          <div class="seat" id="seat1"
+            (click)="seatClicked(1)"
+            [ngClass]="{'booked': isSeatBooked(1)}">1</div>
+          <div class="seat" id="seat2"
+            (click)="seatClicked(2)"
+            [ngClass]="{'booked': isSeatBooked(2)}">2</div>
+          <div class="seat" id="seat3"
+            (click)="seatClicked(3)"
+            [ngClass]="{'booked': isSeatBooked(3)}">3</div>
+          <div class="seat" id="seat4"
+            (click)="seatClicked(4)"
+            [ngClass]="{'booked': isSeatBooked(4)}">4</div>
+          <div class="seat" id="seat5"
+            (click)="seatClicked(5)"
+            [ngClass]="{'booked': isSeatBooked(5)}">5</div>
+          <div class="seat" id="seat6"
+            (click)="seatClicked(6)"
+            [ngClass]="{'booked': isSeatBooked(6)}">6</div>
         </div>
-        <div class="col">
-            <div class="info">
-                <h2>This is Booking information</h2>
-                <ng-container>
-                    <label>Selected Date: {{ selectedDate | date: 'dd/MM/yyyy'}}</label>
-                </ng-container>
-                <br>
 
-                <ng-container>
-                    <mat-form-field>
-                        <mat-label>Select Date:</mat-label>
-                        <input matInput [matDatepicker]="picker"
-                            [(ngModel)]="selectedDate" placeholder="DD/MM/YYYY">
-                        <mat-datepicker-toggle matSuffix
-                            [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                    <h4>Booked Seats : <strong>{{bookedSeats.length}}</strong></h4>
-                    <h4>Available Seats : <strong>{{availableSeats}}</strong></h4>
-                </ng-container>
-            </div>
+        <div class="seats-container2">
+          <div class="seat" id="seat7"
+            (click)="seatClicked(7)"
+            [ngClass]="{'booked': isSeatBooked(7)}">7</div>
+          <div class="seat" id="seat8"
+            (click)="seatClicked(8)"
+            [ngClass]="{'booked': isSeatBooked(8)}">8</div>
+          <div class="seat" id="seat9"
+            (click)="seatClicked(9)"
+            [ngClass]="{'booked': isSeatBooked(9)}">9</div>
+          <div class="seat" id="seat10"
+            (click)="seatClicked(10)"
+            [ngClass]="{'booked': isSeatBooked(10)}">10</div>
+          <div class="seat" id="seat11"
+            (click)="seatClicked(11)"
+            [ngClass]="{'booked': isSeatBooked(11)}">11</div>
+          <div class="seat" id="seat12"
+            (click)="seatClicked(12)"
+            [ngClass]="{'booked': isSeatBooked(12)}">12</div>
         </div>
+
+        <div class="seats-container3">
+          <div class="seat" id="seat13"
+            (click)="seatClicked(13)"
+            [ngClass]="{'booked': isSeatBooked(13)}">13</div>
+          <div class="seat" id="seat14"
+            (click)="seatClicked(14)"
+            [ngClass]="{'booked': isSeatBooked(14)}">14</div>
+          <div class="seat" id="seat15"
+            (click)="seatClicked(15)"
+            [ngClass]="{'booked': isSeatBooked(15)}">15</div>
+          <div class="seat" id="seat16"
+            (click)="seatClicked(16)"
+            [ngClass]="{'booked': isSeatBooked(16)}">16</div>
+          <div class="seat" id="seat17"
+            (click)="seatClicked(17)"
+            [ngClass]="{'booked': isSeatBooked(17)}">17</div>
+          <div class="seat" id="seat18"
+            (click)="seatClicked(18)"
+            [ngClass]="{'booked': isSeatBooked(18)}">18</div>
+        </div>
+
+        <div class="seats-container4">
+          <div class="seat" id="seat19"
+            (click)="seatClicked(19)"
+            [ngClass]="{'booked': isSeatBooked(19)}">19</div>
+          <div class="seat" id="seat20"
+            (click)="seatClicked(20)"
+            [ngClass]="{'booked': isSeatBooked(20)}">20</div>
+          <div class="seat" id="seat21"
+            (click)="seatClicked(21)"
+            [ngClass]="{'booked': isSeatBooked(21)}">21</div>
+          <div class="seat" id="seat22"
+            (click)="seatClicked(22)"
+            [ngClass]="{'booked': isSeatBooked(22)}">22</div>
+          <div class="seat" id="seat23"
+            (click)="seatClicked(23)"
+            [ngClass]="{'booked': isSeatBooked(23)}">23</div>
+          <div class="seat" id="seat24"
+            (click)="seatClicked(24)"
+            [ngClass]="{'booked': isSeatBooked(24)}">24</div>
+        </div>
+      </div>
     </div>
+    <div class="col">
+      <div class="info">
+        <h2>This is Booking information</h2>
+        <ng-container>
+          <label>Selected Date: {{ selectedDate | date: 'dd/MM/yyyy'}}</label>
+        </ng-container>
+        <br>
+
+        <ng-container>
+          <mat-form-field>
+            <mat-label>Select Date:</mat-label>
+            <input matInput [matDatepicker]="picker"
+              [(ngModel)]="selectedDate" placeholder="DD/MM/YYYY">
+            <mat-datepicker-toggle matSuffix
+              [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <h4>Booked Seats : <strong>{{bookedSeats.length}}</strong></h4>
+          <h4>Available Seats : <strong>{{availableSeats}}</strong></h4>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 </div>
 
 <ng-template #confirmModal let-modal>
-    <div class="deletemodal">
-        <h4>Please Conform Seat No.</h4>
+  <div class="deletemodal">
+    <h4>Please Conform Seat No.</h4>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><mat-icon
-                    matPrefix>chair</mat-icon></span>
-            <input type="number" class="form-control" placeholder="Seat No."
-                aria-label="Seat No." [(ngModel)]="conformSeat"
-                aria-describedby="basic-addon1"
-                oninput="this.value = this.value.slice(0, 2)">
-        </div>
-
-      
-        <span (click)="nametoggle()" [ngStyle]="needName ? {'color':'red'} : {'color' : 'green'}" style="font-weight: bold;"> {{needName ? "Not Need Name ?" : "Need Name ?" }}</span>
-        <br>
-        <ng-container *ngIf="needName">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Name</span>
-            <input type="text" class="form-control" placeholder="Enter Full Name..."
-                aria-label="Enter Full Name..." [(ngModel)]="name"
-                aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Mobile Number</span>
-                <input type="text" class="form-control" placeholder="9998805656"
-                    aria-label="Enter Mobile Number" [(ngModel)]="mobileNo"
-                    aria-describedby="basic-addon1"
-                    oninput="this.value = this.value.slice(0, 10)">
-        </div>
-        </ng-container> 
-        <span style="color: red;" *ngIf="mobileNo != undefined && mobileNo.length != 0 && mobileNo.length < 10">Mobile should be 10 digit</span>
-        <div>
-            <button mat-stroked-button class color="danger"
-                (click)="closemodal();selectedSeat=0"
-                style="margin-right: 10px;">Cancel</button>
-            <button mat-raised-button class color="primary"
-                (click)="bookSeat();modal.close('Close click')"
-                [disabled]="isBookingValid()">Book</button>
-        </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1"><mat-icon
+          matPrefix>chair</mat-icon></span>
+      <input type="number" class="form-control" placeholder="Seat No."
+        aria-label="Seat No." [(ngModel)]="conformSeat"
+        aria-describedby="basic-addon1"
+        oninput="this.value = this.value.slice(0, 2)">
     </div>
+
+    <span (click)="nametoggle()"
+      [ngStyle]="needName ? {'color':'red'} : {'color' : 'green'}"
+      style="font-weight: bold;"> {{needName ? "Not Need Name ?" : "Need Name ?"
+      }}</span>
+    <br>
+    <ng-container *ngIf="needName">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Name</span>
+        <input type="text" class="form-control" placeholder="Enter Full Name..."
+          aria-label="Enter Full Name..." [(ngModel)]="name"
+          aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Mobile Number</span>
+        <input type="text" class="form-control" placeholder="9998805656"
+          aria-label="Enter Mobile Number" [(ngModel)]="mobileNo"
+          aria-describedby="basic-addon1"
+          oninput="this.value = this.value.slice(0, 10)">
+      </div>
+    </ng-container>
+    <span style="color: red;"
+      *ngIf="mobileNo != undefined && mobileNo.length != 0 && mobileNo.length < 10">Mobile
+      should be 10 digit</span>
+    <div>
+      <button mat-stroked-button class color="danger"
+        (click)="closemodal();selectedSeat=0"
+        style="margin-right: 10px;">Cancel</button>
+      <button mat-raised-button class color="primary"
+        (click)="bookSeat();modal.close('Close click')"
+        [disabled]="isBookingValid()">Book</button>
+    </div>
+  </div>
 </ng-template>
-
-
-
 
 <ng-template #cancelModal let-modal>
   <div class="deletemodal">
-      <h4>Please Conform Seat No.</h4>
 
+    <h4 style="color: red;">Seat is already booked... <br> You can select other
+      oprion</h4>
+
+    <div>
+      <button mat-stroked-button class color="danger"
+        (click)="closemodal();selectedSeat=undefined;editSeat=false"
+        style="margin-right: 10px;">Cancel</button>
+      <button mat-raised-button class color="primary"
+        (click)="editSeat = true">Cancel Seat</button>
+    </div>
+
+    <div *ngIf="editSeat==true">
+      <h4>Please Conform Seat No.</h4>
       <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><mat-icon
-                  matPrefix>chair</mat-icon></span>
-          <input type="number" class="form-control" placeholder="Seat No."
-              aria-label="Seat No." [(ngModel)]="conformSeat"
-              aria-describedby="basic-addon1"
-              oninput="this.value = this.value.slice(0, 2)">
+        <span class="input-group-text" id="basic-addon1"><mat-icon
+            matPrefix>chair</mat-icon></span>
+        <input type="number" class="form-control" placeholder="Seat No."
+          aria-label="Seat No." [(ngModel)]="conformCancelSeat"
+          aria-describedby="basic-addon1"
+          oninput="this.value = this.value.slice(0, 2)">
       </div>
 
-    
-      <span (click)="nametoggle()" [ngStyle]="needName ? {'color':'red'} : {'color' : 'green'}" style="font-weight: bold;"> {{needName ? "Not Need Name ?" : "Need Name ?" }}</span>
+      <div>
+        <button mat-stroked-button class color="danger"
+          (click)="closemodal();selectedSeat=undefined;editSeat=false"
+          style="margin-right: 10px;">Cancel</button>
+        <button mat-raised-button class color="primary"
+          (click)="cancelBooking();modal.close('Close click');editSeat=false"
+          [disabled]="iscancelBookingValid()">Cancel Booking</button>
+      </div>
+
+      <!-- <span (click)="nametoggle()"
+        [ngStyle]="needName ? {'color':'red'} : {'color' : 'green'}"
+        style="font-weight: bold;"> {{needName ? "Not Need Name ?" :
+        "Need Name ?"
+        }}</span>
       <br>
       <ng-container *ngIf="needName">
-      <div class="input-group mb-3">
+        <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">Name</span>
-          <input type="text" class="form-control" placeholder="Enter Full Name..."
-              aria-label="Enter Full Name..." [(ngModel)]="name"
-              aria-describedby="basic-addon1">
-      </div>
-      <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">Mobile Number</span>
-              <input type="text" class="form-control" placeholder="9998805656"
-                  aria-label="Enter Mobile Number" [(ngModel)]="mobileNo"
-                  aria-describedby="basic-addon1"
-                  oninput="this.value = this.value.slice(0, 10)">
-      </div>
-      </ng-container> 
-      <span style="color: red;" *ngIf="mobileNo != undefined && mobileNo.length != 0 && mobileNo.length < 10">Mobile should be 10 digit</span>
-      <div>
-          <button mat-stroked-button class color="danger"
-              (click)="closemodal();selectedSeat=0"
-              style="margin-right: 10px;">Cancel</button>
-          <button mat-raised-button class color="primary"
-              (click)="bookSeat();modal.close('Close click')"
-              [disabled]="isBookingValid()">Book</button>
-      </div>
+          <input type="text" class="form-control"
+            placeholder="Enter Full Name..."
+            aria-label="Enter Full Name..." [(ngModel)]="name"
+            aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1">Mobile Number</span>
+          <input type="text" class="form-control" placeholder="9998805656"
+            aria-label="Enter Mobile Number" [(ngModel)]="mobileNo"
+            aria-describedby="basic-addon1"
+            oninput="this.value = this.value.slice(0, 10)">
+        </div>
+      </ng-container>
+      <span style="color: red;"
+        *ngIf="mobileNo != undefined && mobileNo.length != 0 && mobileNo.length < 10">Mobile
+        should be 10 digit</span> -->
+
+
+     
+    </div>
   </div>
 </ng-template>

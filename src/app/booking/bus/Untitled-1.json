@@ -1,0 +1,1530 @@
+<div *ngIf="!partnerIsRegistrationCompleted" >
+<div class="userprofilewidget">
+    <div class="username">
+        <h3>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 0C4.48603 0 0 4.48604 0 10C0 15.514 4.48603 20 10 20C15.514 20 20 15.514 20 10C20 4.48604 15.514 0 10 0ZM10 1.5C14.7033 1.5 18.5 5.2967 18.5 10C18.5 14.7033 14.7033 18.5 10 18.5C5.29669 18.5 1.5 14.7033 1.5 10C1.5 5.2967 5.29669 1.5 10 1.5ZM10 5C9.73478 5 9.48043 5.10536 9.29289 5.29289C9.10536 5.48043 9 5.73478 9 6C9 6.26522 9.10536 6.51957 9.29289 6.70711C9.48043 6.89464 9.73478 7 10 7C10.2652 7 10.5196 6.89464 10.7071 6.70711C10.8946 6.51957 11 6.26522 11 6C11 5.73478 10.8946 5.48043 10.7071 5.29289C10.5196 5.10536 10.2652 5 10 5ZM9.98828 8.48926C9.78954 8.49236 9.60016 8.57423 9.46173 8.71686C9.3233 8.8595 9.24715 9.05125 9.25 9.25V14.75C9.24859 14.8494 9.26696 14.9481 9.30402 15.0403C9.34108 15.1325 9.3961 15.2164 9.46588 15.2872C9.53566 15.358 9.61882 15.4142 9.71051 15.4526C9.8022 15.4909 9.90061 15.5107 10 15.5107C10.0994 15.5107 10.1978 15.4909 10.2895 15.4526C10.3812 15.4142 10.4643 15.358 10.5341 15.2872C10.6039 15.2164 10.6589 15.1325 10.696 15.0403C10.733 14.9481 10.7514 14.8494 10.75 14.75V9.25C10.7514 9.14962 10.7327 9.04997 10.6949 8.95695C10.6571 8.86394 10.6011 8.77946 10.53 8.70852C10.459 8.63758 10.3745 8.58161 10.2814 8.54395C10.1883 8.50629 10.0887 8.48769 9.98828 8.48926Z" fill="#F8485E"/>
+            </svg>
+             Please fill up this form</h3>
+    </div>
+</div>
+<div class="stapper-container">
+    <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+        <mat-step [stepControl]="profileForm" [label]="'registration.PersonalInformation' | translate ">
+            <form [formGroup]="profileForm">
+                <div class="userform">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">{{'registration.Civility' | translate }}<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <select formControlName="civility" class="form-select" aria-label="Default select example">
+                                    <option disabled selected value="">Select Civility</option>
+                                    <option value="Mr.">{{'registration.Mr' | translate }}.</option>
+                                    <option value="Mrs.">Mrs.</option>
+                                    <option value="Ms">{{'registration.Ms' | translate }}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">{{'registration.FirstName' | translate }}</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" [placeholder]="'registration.FirstName' | translate " formControlName="First_Name" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">{{'registration.LastName' | translate }}</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" [placeholder]="'registration.LastName' | translate" formControlName="Last_Name" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Company Name Displayed</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <span class="form-control" >{{profileForm.controls['Company_Name_Displayed']?.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">E-mail<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <span class="form-control" >{{profileForm.controls['Email_address']?.value}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Birth Date<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <div class="input-group">
+                                    <input type="text" formControlName="Birth_date" class="form-control" matInput  >
+                                    <!-- <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle> -->
+                                </div>
+                                <mat-hint *ngIf="birthDateValidation" >you must be 13 or older*</mat-hint><br>
+                                <mat-hint *ngIf="birthDateText !== ''" >{{birthDateText}}</mat-hint>
+                                <p *ngIf="profileForm.controls['Birth_date']?.value == '' && profileForm.controls['Birth_date']?.touched"
+                                    style="color:red;" class="red">
+                                    Birth Date is required
+                                </p>
+                                <!-- <mat-datepicker #picker></mat-datepicker> -->
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Phone<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Phone" formControlName="phone" />
+                            
+                            <p style="color:red" class="red" *ngIf="!profileForm.controls['phone']?.valid && profileForm.controls['phone']?.touched" >Phone number is required</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-10">
+                            <div class="d-flex w-100 align-items-center">
+                                <button class="btn ms-auto" [disabled]="birthDateValidation || !profileForm.controls['phone']?.valid || !profileForm.controls['civility']?.valid || !profileForm.controls['Birth_date']?.valid || birthDateText != '' " mat-stroked-button color="primary" matStepperNext>Next <mat-icon fontIcon="chevron_right">chevron_right</mat-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="profileForm" label="Billing Address"><br><br>
+            <form [formGroup]="profileForm">
+                <div class="userform">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Billing location<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Billing location"
+                                    formControlName="billing_Location" />
+                            
+                            <p *ngIf="!profileForm.controls['billing_Location']?.valid && profileForm.controls['billing_Location']?.touched"
+                                style="color:red;" class="red">
+                                Billing Location is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Straße und Hausnummer<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Straße und Hausnummer"
+                                    formControlName="street_and_house" />
+                            
+                            <p *ngIf="!profileForm.controls['street_and_house']?.valid && profileForm.controls['street_and_house']?.touched"
+                                style="color:red;" class="red">
+                                Straße und Hausnummer is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">PLZ<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Postal Code" formControlName="PLZ" />
+                            
+                            <p *ngIf="!profileForm.controls['PLZ']?.valid && profileForm.controls['PLZ']?.touched"
+                                style="color:red;" class="red">
+                                PLZ is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">City<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="City" formControlName="City" />
+                            
+                            <p *ngIf="!profileForm.controls['City']?.valid && profileForm.controls['City']?.touched"
+                                style="color:red;" class="red">
+                                City is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Country<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <select formControlName="Country" class="form-select" aria-label="Default select example">
+                                    <option disabled selected value="">Select Country</option>
+                                    <option value="Deutschland">Deutschland</option>
+                                    <option value="Österreich">Österreich</option>
+                                    <option value="Schweiz">Schweiz</option>
+                                    <option value="Niederlande">Niederlande</option>
+                                    <option value="Belgien">Belgien</option>
+                                </select>
+                            <p *ngIf="!profileForm.controls['Country']?.valid && profileForm.controls['Country']?.touched"
+                                style="color:red;" class="red">
+                                Country is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- <div *ngIf="hideAdditionalLoc" class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">additional_location</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12 col-md-10">
+                            <button mat-stroked-button class="btn btn-outline-blue" (click)="hideAdditionalLoc = true"> + Add additional locations</button>
+                        </div>
+                    </div> -->
+
+
+                    <div class="row">
+                        <div class="col-12 col-md-10">
+                            <div class="d-flex w-100 align-items-center">
+                                <button mat-stroked-button color="primary" class="btn" matStepperPrevious>
+                                <mat-icon>chevron_left</mat-icon>Prev</button>
+                                <button mat-stroked-button class="btn ms-auto" color="primary" matStepperNext [disabled]="!profileForm.controls['billing_Location']?.valid || !profileForm.controls['street_and_house']?.valid || !profileForm.controls['PLZ']?.valid || !profileForm.controls['Country']?.valid ">Next
+                                            <mat-icon>chevron_right</mat-icon> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="profileForm" label="Partnership Details">
+            <form [formGroup]="profileForm">
+                <div class="row">
+                    <h3 *ngIf="profileForm.controls['selected_plan'].valid">You have selected
+                        {{profileForm.controls['selected_plan'].value}} Subscription Plan </h3>
+                    <div class="col-12 col-sm-6 mb-3 col-md-3">
+                        <div class="packageitem">
+                            <label class="mb-0">LITE</label>
+                            <div class="priceamount">€0, <span>P.M.</span></div>
+                            <div class="packagedetails">
+                                This plan includes:
+                            </div>
+                            <ul class="package-item">
+                                <li><mat-icon>arrow_right</mat-icon> 2 permanent coupons</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1 follow me coupino</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1 active location*</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1 times better placement</li>
+                                <li><mat-icon>arrow_right</mat-icon> optional follow-me cards</li>
+                                <li><mat-icon>arrow_right</mat-icon> Unlimited term (in months)</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos Title 60 letters</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos description 300 letters</li>
+                            </ul>
+                            <div class="packagebottom">
+                                <button color="primary" mat-raised-button (click)="profileForm.controls['selected_plan'].setValue('LITE')">Select Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-3 col-md-3">
+                        <div class="packageitem">
+                            <label class="mb-0">BASIS</label>
+                            <div class="priceamount">€25, <span>P.M.</span></div>
+                            <div class="packagedetails">
+                                This plan includes:
+                            </div>
+                            <ul class="package-item">
+                                <li><mat-icon>arrow_right</mat-icon> Like LITE, plus:</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1 flexible coupino</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1 active location*</li>
+                                <li><mat-icon>arrow_right</mat-icon> 1,000 Follow Me Cards</li>
+                                <li><mat-icon>arrow_right</mat-icon> 3 times better placement</li>
+                                <li><mat-icon>arrow_right</mat-icon> 3% print discount</li>
+                                <li><mat-icon>arrow_right</mat-icon> 12 term (in months)</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos Title 60 letters</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos description 1000 letters</li>
+                            </ul>
+                            <div class="packagebottom">
+                                <button disabled (click)="profileForm.controls['selected_plan'].setValue('BASIC')" color="primary" mat-raised-button >Select Plan</button>
+                                <p>) *Function still under  development</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-3 col-md-3">
+                        <div class="packageitem">
+                            <label class="mb-0">PERFORMANCE</label>
+                            <div class="priceamount">€45, <span>P.M.</span></div>
+                            <div class="packagedetails">
+                                This plan includes:
+                            </div>
+                            <ul class="package-item">
+                                <li><mat-icon>arrow_right</mat-icon> Like Base, plus:</li>
+                                <li><mat-icon>arrow_right</mat-icon> 3 flexible coupino</li>
+                                <li><mat-icon>arrow_right</mat-icon> 3+ active location**</li>
+                                <li><mat-icon>arrow_right</mat-icon> 3,000 Follow Me Cards</li>
+                                <li><mat-icon>arrow_right</mat-icon> 5 times better placement</li>
+                                <li><mat-icon>arrow_right</mat-icon> 5% print discount</li>
+                                <li><mat-icon>arrow_right</mat-icon> Mini shop up to 30 items* loyalty card*</li>
+                                <li><mat-icon>arrow_right</mat-icon> post events </li>
+                                <li><mat-icon>arrow_right</mat-icon> Ads for a fee </li>
+                                <li><mat-icon>arrow_right</mat-icon> Video in builder bar gallery in feed </li>
+                                <li><mat-icon>arrow_right</mat-icon> 12 term (in months)</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos Title 60 letters</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos description 1000 letters</li>
+                            </ul>
+                            <div class="packagebottom">
+                                <button disabled (click)="profileForm.controls['selected_plan'].setValue('PERFORMANCE')" color="primary" mat-raised-button >Select Plan</button>
+                                <p>) *Function still under development ))* **further locations each 10, $p.m.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 mb-3 col-md-3">
+                        <div class="packageitem">
+                            <label class="mb-0">PREMIUM</label>
+                            <div class="priceamount">€85, <span>P.M.</span></div>
+                            <div class="packagedetails">
+                                This plan includes:
+                            </div>
+                            <ul class="package-item">
+                                <li><mat-icon>arrow_right</mat-icon> Like performance, but:</li>
+                                <li><mat-icon>arrow_right</mat-icon> 5 flexible coupino</li>
+                                <li><mat-icon>arrow_right</mat-icon> 5+ active location**</li>
+                                <li><mat-icon>arrow_right</mat-icon> 5,000 Follow Me Cards</li>
+                                <li><mat-icon>arrow_right</mat-icon> 10 times better placement</li>
+                                <li><mat-icon>arrow_right</mat-icon> 10% print discount</li>
+                                <li><mat-icon>arrow_right</mat-icon> Mini shop, unlimited*</li>
+                                <li><mat-icon>arrow_right</mat-icon> Ads for a fee </li>
+                                <li><mat-icon>arrow_right</mat-icon> Video in builder bar gallery in feed </li>
+                                <li><mat-icon>arrow_right</mat-icon> 12 term (in months)</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos Title 60 letters</li>
+                                <li><mat-icon>arrow_right</mat-icon> Length of coupinos description 1000 letters</li>
+                            </ul>
+                            <div class="packagebottom">
+                                <button disabled (click)="profileForm.controls['selected_plan'].setValue('PREMIUM')" color="primary" mat-raised-button >Select Plan</button>
+                                <p>) *Function still under development ))* **further locations each 10, $p.m.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">
+                        <div class="d-flex w-100 align-items-center">
+                            <button mat-stroked-button color="primary" class="btn" matStepperPrevious>
+                            <mat-icon>chevron_left</mat-icon>Prev</button>
+                            <button mat-stroked-button class="btn ms-auto" color="primary" matStepperNext>Next
+                                        <mat-icon>chevron_right</mat-icon> </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div style="padding-top: 20%;">
+                    <button mat-raised-button class="btn btn-primary btn-lg float-start" matStepperPrevious>
+                        < Prev</button>
+                            <button mat-raised-button class="btn btn-primary btn-lg float-end" matStepperNext>Next >
+                            </button>
+                </div> -->
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="profileForm" label="Add Venues"><br>
+            <form [formGroup]="profileForm">
+                <div class="userform">
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <h3><strong> Venue Details:</strong></h3>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <mat-checkbox style="font-size:16px;" (change)="handleChange($event)">Import from Billing Address</mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">First Venue</label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="First Venue"
+                                    formControlName="First_Venue" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-">
+                                <label class="mb-0">Straße und Hausnummer<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" placeholder="Straße und Hausnummer"
+                                    formControlName="vanue_street_and_house" />
+                            
+                            <p *ngIf="!profileForm.controls['vanue_street_and_house']?.valid && profileForm.controls['vanue_street_and_house']?.touched"
+                                style="color:red;" class="red">
+                                Straße und Hausnummer is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-3">
+                                <label class="mb-0">PLZ<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="Postal Code" formControlName="VANUE_PLZ" />
+                            
+                            <p *ngIf="!profileForm.controls['VANUE_PLZ']?.valid && profileForm.controls['VANUE_PLZ']?.touched"
+                                style="color:red;" class="red">
+                                PLZ is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">City<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" placeholder="City" formControlName="VANUE_CITY" />
+                            
+                            <p *ngIf="!profileForm.controls['VANUE_CITY']?.valid && profileForm.controls['VANUE_CITY']?.touched"
+                                style="color:red;" class="red">
+                                City is required
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12 col-md-4">
+                            <div class="form-group mb-0">
+                                <label class="mb-0">Country<sup>*</sup></label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group mb-3">
+                                <select formControlName="Vanue_Country" class="form-select" aria-label="Default select example">
+                                    <option disabled selected value="">Select Country</option>
+                                    <option value="Deutschland">Deutschland</option>
+                                    <option value="Österreich">Österreich</option>
+                                    <option value="Schweiz">Schweiz</option>
+                                    <option value="Niederlande">Niederlande</option>
+                                    <option value="Belgien">Belgien</option>
+                                </select>
+                            <p *ngIf="!profileForm.controls['Vanue_Country']?.valid && profileForm.controls['Vanue_Country']?.touched"
+                                style="color:red;" class="red">
+                                Country is required
+                            </p>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <h3><strong> Opening Hours Details:</strong></h3><br>
+                    <div class="row mb-3">
+                        <div class="col-sm">
+                            <span class="text">Weekday</span><br><br>
+                            <span class="text">Opening Time</span><br><br>
+                            <span class="text">Closing Time</span>
+                        </div>
+                        <div class="col-sm">
+                            <span class="text">Monday</span>
+                            <div class="form-group mb-2">
+                            <input (keyup)="checkTime($event)" class="form-control" formControlName="moStart_time" type="time" ></div>
+                            <div class="form-group mb-0">
+                            <input (keyup)="checkTime($event)" class="form-control" formControlName="moEnd_time" type="time" >
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Tuesday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="tuStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="tuEnd_time" type="time" >
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Wednesday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="weStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="weEnd_time" type="time" >
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Thrusday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="thStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="thEnd_time" type="time" >
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Friday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="frStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0 ">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="frEnd_time" type="time" >
+                          </div>
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Saturday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="saStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="saEnd_time" type="time" >
+                          </div>
+
+                        </div>
+                        <div class="col-sm">
+                          <span class="text">Sunday</span>
+                          <div class="form-group mb-2">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="suStart_time" type="time" >
+                          </div>
+                          <div class="form-group mb-0">
+                          <input (keyup)="checkTime($event)" class="form-control" formControlName="suEnd_time" type="time" >
+                          </div>
+                        </div>
+                      </div>
+                      <div style="color:red;text-align:center" *ngIf="profileForm?.errors && profileForm?.errors?.atLeastOneTimeRequired">
+                        At least one time is required for one day.
+                        </div>
+                 
+
+
+                    <br><br><div class="row">
+                        <div class="col-12 col-md-10">
+                            <div class="d-flex w-100 align-items-center">
+                                <button mat-stroked-button color="primary" class="btn" matStepperPrevious>
+                                <mat-icon>chevron_left</mat-icon>Prev</button>
+                                <button mat-stroked-button class="btn ms-auto" color="primary" matStepperNext [disabled]="!profileForm.valid">Next
+                                            <mat-icon>chevron_right</mat-icon> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-step>
+        
+        <mat-step [stepControl]="profileForm" label="Confirm Summary">
+            <div class="userform">
+
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">Civility</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['civility']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">{{'registration.FirstName' | translate }}</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['First_Name']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">{{'registration.LastName' | translate }}</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Last_Name']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">Company Name</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Company_Name_Displayed']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Email address </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Email_address']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Birth Date </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Birth_date']?.value | date: 'dd/MM/yyyy'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Phone </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['phone']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Billing Location </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['billing_Location']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Straße und Hausnummer </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['street_and_house']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> PLZ </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['PLZ']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Country </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Country']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Select Plan </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['selected_plan']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <h3>Venue Details:</h3>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> First Venue </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['First_Venue']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Straße und Hausnummer* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['vanue_street_and_house']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> PLZ* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['VANUE_PLZ']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Country* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Vanue_Country']?.value}}
+                        </div>
+                    </div>
+                </div>
+                <h3>Opening Hours Details:</h3>
+                <div *ngIf="profileForm.controls['moStart_time']?.value && profileForm.controls['moStart_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Monday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['moStart_time']?.value}} to {{profileForm.controls['moEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['tuEnd_time']?.value && profileForm.controls['tuEnd_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Tuesday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['tuStart_time']?.value}} to {{profileForm.controls['tuEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['weStart_time']?.value && profileForm.controls['weEnd_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Wednesday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['weStart_time']?.value}} to {{profileForm.controls['weEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['thStart_time']?.value && profileForm.controls['thStart_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Thursday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['thStart_time']?.value}} to {{profileForm.controls['thEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['frEnd_time']?.value && profileForm.controls['frEnd_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Friday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['frStart_time']?.value}} to {{profileForm.controls['frEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['suEnd_time']?.value && profileForm.controls['suEnd_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Saturday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['saStart_time']?.value}} to {{profileForm.controls['suEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="profileForm.controls['suEnd_time']?.value && profileForm.controls['suEnd_time']?.value" class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Sunday start to end time* </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['suStart_time']?.value}} to {{profileForm.controls['suEnd_time']?.value }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                            <mat-checkbox style="font-size:16px;">Receive invoice via email</mat-checkbox>
+                    </div>
+                </div>
+                <!-- <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0"> Select Payment Method </label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Payment_method']?.value}}
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">Payment credentials</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['Payment_Credentials']?.value}}
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="row mb-3">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group mb-0">
+                            <label class="mb-0">Billing Address</label>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="labelvalue">
+                            {{profileForm.controls['billing_address']?.value}}
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10">
+                    <div class="d-flex w-100 align-items-center">
+                        <button mat-stroked-button color="primary" class="btn" matStepperPrevious>
+                        <mat-icon>chevron_left</mat-icon>Prev</button>
+                        <button mat-raised-button class="btn ms-auto" color="primary" (click)="updatePartnerUser()"
+                        [disabled]="profileForm.invalid">Confirm</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div>
+                <button mat-raised-button class="btn btn-primary btn-lg float-start" matStepperPrevious>
+                    < Prev</button>
+                        <button class="btn btn-primary btn-lg float-end" (click)="updatePartnerUser()"
+                            [disabled]="profileForm.invalid">Confirm</button>
+            </div> -->
+        </mat-step>
+    </mat-stepper>
+</div>
+</div>
+<!-- <div class="userform">
+    <form [formGroup]="profileForm">
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Straße und Hausnummer<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="street_and_house" />
+                </div>
+                <p *ngIf="!profileForm.controls['street_and_house']?.valid && profileForm.controls['street_and_house']?.touched"
+                    style="color:red;">
+                    Straße und Hausnummer is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">PLZ<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="PLZ" />
+                </div>
+                <p *ngIf="!profileForm.controls['PLZ']?.valid && profileForm.controls['PLZ']?.touched"
+                    style="color:red;">
+                    PLZ is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Country<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <select formControlName="Country" class="form-select" aria-label="Default select example">
+                        <option value="Deutschland">Deutschland</option>
+                        <option value="Österreich">Österreich</option>
+                        <option value="Schweiz">Schweiz</option>
+                        <option value="Niederlande">Niederlande</option>
+                        <option value="Belgien">Belgien</option>
+                    </select>
+                </div>
+                <p *ngIf="!profileForm.controls['Country']?.valid && profileForm.controls['Country']?.touched"
+                    style="color:red;">
+                    Country is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">UstID-No<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="UstIDNO" />
+                </div>
+                <p *ngIf="!profileForm.controls['UstIDNO']?.valid && profileForm.controls['UstIDNO']?.touched"
+                    style="color:red;">
+                    UstID-No is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">City<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="City" />
+                </div>
+                <p *ngIf="!profileForm.controls['City']?.valid && profileForm.controls['City']?.touched"
+                    style="color:red;">
+                    City is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">E-mail<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="email" class="form-control" formControlName="Email_address" />
+                </div>
+                <p *ngIf="!profileForm.controls['Email_address']?.valid && profileForm.controls['Email_address']?.touched"
+                    style="color:red;">
+                    Email_address is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Tel.no<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Telno" />
+                </div>
+                <p *ngIf="!profileForm.controls['Telno']?.valid && profileForm.controls['Telno']?.touched"
+                    style="color:red;">
+                    Tel. no is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Website<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Website" />
+                </div>
+                <p *ngIf="!profileForm.controls['Website']?.valid && profileForm.controls['Website']?.touched"
+                    style="color:red;">
+                    Website is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Branch(es)<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <div class="form-control">
+                        <ng-multiselect-dropdown formControlName="Branch" [placeholder]="'Select Branches'"
+                            [settings]="dropdownSettings" (click)="branchError()" [data]="Branches">
+                        </ng-multiselect-dropdown>
+                    </div>
+                </div>
+                <p *ngIf="(BranchErrorLog == true) || (!profileForm.controls['Branch']?.valid && profileForm.controls['Branch']?.touched)"
+                    style="color:red;">
+                    Branch is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Industry Sector<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-control">
+                    <ng-multiselect-dropdown formControlName="Industry_Sector" [placeholder]="'Select Industry Sector'"
+                        [settings]="dropdownSettings" [data]="Industry_Sector" (click)="industrySectorError()">
+                    </ng-multiselect-dropdown>
+                </div>
+                <p *ngIf="(IndustrySectorError == true) || (!profileForm.controls['Industry_Sector']?.valid && profileForm.controls['Industry_Sector']?.touched)"
+                    style="color:red;">
+                    Industry Sector is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Category(ies)<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <ng-multiselect-dropdown class="form-control" formControlName="Category"
+                    [placeholder]="'Select Categories'" (click)="categoryError()" [settings]="dropdownSettings"
+                    [data]="Categories">
+                </ng-multiselect-dropdown>
+                <p *ngIf="(CategoryError == true) || (!profileForm.controls['Category']?.valid && profileForm.controls['Category']?.touched)"
+                    style="color:red;">
+                    Category is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">VAT No<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="VAT_No" />
+                </div>
+                <p *ngIf="!profileForm.controls['VAT_No']?.valid && profileForm.controls['VAT_No']?.touched"
+                    style="color:red;">
+                    VAT No is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Commercial register No<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Commercial_register_No" />
+                </div>
+                <p *ngIf="!profileForm.controls['Commercial_register_No']?.valid && profileForm.controls['Commercial_register_No']?.touched"
+                    style="color:red;">
+                    Commercial Register No is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Coupinos contact person<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Coupinos_contact_person" />
+                </div>
+                <p *ngIf="!profileForm.controls['Coupinos_contact_person']?.valid && profileForm.controls['Coupinos_contact_person']?.touched"
+                    style="color:red;">
+                    Coupinos contact person is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Salutation<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Salutation" />
+                </div>
+                <p *ngIf="!profileForm.controls['Salutation']?.valid && profileForm.controls['Salutation']?.touched"
+                    style="color:red;">
+                    Salutation is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Title<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Title" />
+                </div>
+                <p *ngIf="!profileForm.controls['Title']?.valid && profileForm.controls['Title']?.touched"
+                    style="color:red;">
+                    Title is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">First Name<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="First_Name" />
+                </div>
+                <p *ngIf="!profileForm.controls['First_Name']?.valid && profileForm.controls['First_Name']?.touched"
+                    style="color:red;">
+                    First Name is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Profile Picture<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="user-profile">
+                    <ul>
+                        <li *ngIf="profilePicture != '' && profilePictureUrl == '' ">
+                            <img [src]="apiBaseUrl + profilePicture" />
+                        </li>
+                        <li *ngIf="profilePictureUrl != '' && profilePicture == '' ">
+                            <img [src]="profilePictureUrl" />
+                        </li>
+                        <li *ngIf="profilePicture == '' && profilePictureUrl == ''  ">
+                            <img src="../../../../../assets/images/download.png" />
+                        </li>
+                    </ul>
+                    <input [hidden]="true" #file type="file" accept="image/*" (change)="profilePhotoUpload($event)">
+                    <button [disabled]="profilePicture != ''" #FileInput mat-raised-button class="ms-2" color="primary"
+                        (click)="file.click()">Upload</button>
+                    <button #FileInput (click)="file.click()" mat-raised-button type="button" class="ms-2"
+                        [disabled]="profilePicture == ''" color="primary">Edit</button>
+                    <button mat-raised-button type="button" class="ms-2" disabled color="primary">Delete</button>
+                </div>
+                <p *ngIf="ProfilePictureError" style="color:red;">
+                    Please Upload Profile Picture
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Name to Profile Picture<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Name_to_Profile_Picture" />
+                </div>
+                <p *ngIf="!profileForm.controls['Name_to_Profile_Picture']?.valid && profileForm.controls['Name_to_Profile_Picture']?.touched"
+                    style="color:red;">
+                    Name to Profile Picture is required
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Company Name Displayed</label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <input type="text" class="form-control" formControlName="Company_Name_Displayed" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                    <label class="mb-0">Upload Logo<sup>*</sup></label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="user-profile">
+                    <ul>
+                        <li *ngIf="comapnyLogo != '' && companyLogoUrl == '' ">
+                            <img [src]="apiBaseUrl + comapnyLogo" />
+                        </li>
+                        <li *ngIf="companyLogoUrl != '' && comapnyLogo == '' ">
+                            <img [src]="companyLogoUrl" />
+                        </li>
+                        <li *ngIf="comapnyLogo == '' && companyLogoUrl == '' ">
+                            <img
+                                src="../../../../../assets/images/665-6659827_enterprise-comments-default-company-logo-png-transparent-png.png" />
+                        </li>
+                    </ul>
+                    <input [hidden]="true" #logo type="file" (change)="uploadCompanyLogo($event)">
+                    <button [disabled]="comapnyLogo != ''" #uplodLogo mat-raised-button class="ms-2" color="primary"
+                        (click)="logo.click()">Upload</button>
+                    <button #uplodLogo mat-raised-button type="button" class="ms-2" (click)="logo.click()"
+                        [disabled]="comapnyLogo == ''" color="primary">Edit</button>
+                    <button mat-raised-button type="button" class="ms-2" disabled color="primary">Delete</button>
+                </div>
+                <p *ngIf="ComapnyLogoError" style="color:red;">
+                    Please Upload Company Logo
+                </p>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-12 col-md-4">
+                <div class="form-group mb-0">
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-group mb-0">
+                    <button mat-stroked-button class="" (click)="profileForm.reset();" color="primary">Cancel</button>
+                    <button mat-raised-button class="" [disabled]="!profileForm.valid" (click)="updatePartnerUser()"
+                        color="primary">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div> -->
+
+<!-- Update Modal -->
+<ng-template #update let-modal>
+    <div class="deletemodal">
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <img src="../../../../../assets/images/cross.svg" />
+        </button>
+        <h2>Upload Photo</h2>
+        <div class="fileuploadupdate">
+            <label>Upload Photo</label>
+            <div class="fileupload">
+                <input type="file" />
+                <div class="filecontent">
+                    <p>Drag and Drop </p>
+                    <p>or</p>
+                    <button mat-raised-button class="" color="primary">Browse</button>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <img src="../../../../../assets/images/marketuser.png" />
+                    <span><img src="../../../../../assets/images/crossblack.svg" /></span>
+                </li>
+                <li>
+                    <img src="../../../../../assets/images/marketuser.png" />
+                    <span><img src="../../../../../assets/images/crossblack.svg" /></span>
+                </li>
+                <li>
+                    <img src="../../../../../assets/images/marketuser.png" />
+                    <span><img src="../../../../../assets/images/crossblack.svg" /></span>
+                </li>
+                <li>
+                    <img src="../../../../../assets/images/marketuser.png" />
+                    <span><img src="../../../../../assets/images/crossblack.svg" /></span>
+                </li>
+            </ul>
+        </div>
+        <div class="actionbtn">
+            <button mat-raised-button class="" color="primary" (click)="modal.close('Close click')">Upload</button>
+        </div>
+    </div>
+</ng-template>
+
+
+<!-- Update Modal -->
+<ng-template #passwordchange let-modal>
+    <div class="deletemodal">
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <img src="../../../../../assets/images/cross.svg" />
+        </button>
+        <div class="row formsfield justify-content-center">
+            <div class="col-11">
+                <p class="text-center mb-3">Erstellen Sie ein sicheres Passwort. Es soll min. 8 Zeichen haben, darunter
+                    min. 1 Zahl</p>
+                <div class="form-group mb-3">
+                    <label>Neues Passwort</label>
+                    <div class="input-group">
+                        <input type="password" placeholder="Type your password" class="form-control">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.9953 3C8.34476 3 4.98114 4.63957 2.69355 7.17188C2.62751 7.24497 2.5765 7.33037 2.54346 7.42318C2.51042 7.51598 2.49597 7.61439 2.50096 7.71278C2.50595 7.81117 2.53027 7.90762 2.57253 7.99661C2.61479 8.0856 2.67416 8.1654 2.74726 8.23145C2.89489 8.36483 3.08946 8.43411 3.28817 8.42403C3.38656 8.41905 3.48301 8.39473 3.572 8.35247C3.66099 8.31021 3.74079 8.25083 3.80683 8.17773C5.81924 5.95004 8.79586 4.5 11.9953 4.5C15.1948 4.5 18.1771 5.95069 20.1945 8.17871C20.2598 8.2548 20.3396 8.31704 20.4293 8.36176C20.519 8.40648 20.6167 8.43277 20.7168 8.43908C20.8168 8.44538 20.9171 8.43158 21.0117 8.39848C21.1063 8.36538 21.1933 8.31365 21.2676 8.24636C21.3418 8.17907 21.4019 8.09757 21.4441 8.00668C21.4864 7.9158 21.51 7.81736 21.5136 7.7172C21.5171 7.61704 21.5006 7.51718 21.4649 7.42351C21.4292 7.32985 21.3752 7.24428 21.3059 7.17188C19.0132 4.63989 15.6459 3 11.9953 3ZM20.1896 11.9883C20.029 11.9965 19.8752 12.0563 19.7511 12.1586C19.6269 12.2609 19.539 12.4005 19.5002 12.5566C18.6975 15.5672 15.5395 18 11.9953 18C8.45109 18 5.30317 15.5684 4.50019 12.5566C4.46011 12.3977 4.3691 12.2563 4.24107 12.1541C4.11304 12.0518 3.95503 11.9942 3.79121 11.9902C3.67385 11.9874 3.55746 12.0121 3.4514 12.0624C3.34535 12.1128 3.25259 12.1873 3.18058 12.28C3.10857 12.3727 3.05933 12.481 3.03682 12.5963C3.01431 12.7115 3.01916 12.8304 3.05097 12.9434C3.2908 13.8429 3.69495 14.6842 4.21894 15.4502L2.79511 16.6367C2.7167 16.6989 2.65153 16.7762 2.60343 16.8639C2.55533 16.9517 2.52529 17.0482 2.51506 17.1477C2.50483 17.2473 2.51462 17.3479 2.54387 17.4436C2.57311 17.5393 2.62121 17.6282 2.68534 17.705C2.74947 17.7819 2.82832 17.8451 2.91725 17.891C3.00619 17.9369 3.10341 17.9645 3.20319 17.9722C3.30297 17.98 3.40328 17.9677 3.49823 17.936C3.59318 17.9044 3.68084 17.8541 3.75605 17.7881L5.25117 16.541C5.79427 17.1019 6.37696 17.5956 7.05488 18.0107L6.13789 19.5996C6.08862 19.685 6.05664 19.7792 6.04379 19.8769C6.03093 19.9746 6.03745 20.0739 6.06297 20.1691C6.08849 20.2642 6.13251 20.3535 6.19252 20.4316C6.25253 20.5098 6.32735 20.5754 6.41271 20.6247C6.49807 20.6739 6.59229 20.7059 6.69 20.7187C6.78771 20.7315 6.88699 20.725 6.98217 20.6994C7.07735 20.6739 7.16657 20.6299 7.24473 20.5698C7.32289 20.5098 7.38846 20.435 7.43769 20.3496L8.38691 18.7041C9.2935 19.0793 10.2364 19.3578 11.2502 19.4385V21.25C11.2488 21.3494 11.2671 21.4481 11.3042 21.5403C11.3413 21.6325 11.3963 21.7164 11.4661 21.7872C11.5359 21.858 11.619 21.9142 11.7107 21.9526C11.8024 21.9909 11.9008 22.0107 12.0002 22.0107C12.0996 22.0107 12.198 21.9909 12.2897 21.9526C12.3814 21.9142 12.4645 21.858 12.5343 21.7872C12.6041 21.7164 12.6591 21.6325 12.6962 21.5403C12.7332 21.4481 12.7516 21.3494 12.7502 21.25V19.4375C13.7629 19.356 14.7053 19.0773 15.6115 18.7021L16.5627 20.3496C16.6119 20.435 16.6775 20.5098 16.7557 20.5698C16.8338 20.6299 16.923 20.6739 17.0182 20.6994C17.1134 20.725 17.2127 20.7315 17.3104 20.7187C17.4081 20.7059 17.5023 20.6739 17.5877 20.6247C17.673 20.5754 17.7479 20.5098 17.8079 20.4316C17.8679 20.3535 17.9119 20.2642 17.9374 20.1691C17.9629 20.0739 17.9694 19.9746 17.9566 19.8769C17.9437 19.7792 17.9118 19.685 17.8625 19.5996L16.9445 18.0088C17.6222 17.5939 18.2042 17.1003 18.7473 16.54L20.2443 17.7881C20.3195 17.8541 20.4072 17.9044 20.5021 17.936C20.5971 17.9677 20.6974 17.98 20.7972 17.9722C20.897 17.9645 20.9942 17.9369 21.0831 17.891C21.1721 17.8451 21.2509 17.7819 21.315 17.705C21.3792 17.6282 21.4273 17.5393 21.4565 17.4436C21.4858 17.3479 21.4956 17.2473 21.4853 17.1477C21.4751 17.0482 21.445 16.9517 21.3969 16.8639C21.3489 16.7762 21.2837 16.6989 21.2053 16.6367L19.7805 15.4492C20.3047 14.6836 20.7097 13.8425 20.9494 12.9434C20.9822 12.8286 20.9871 12.7077 20.9638 12.5906C20.9404 12.4736 20.8895 12.3638 20.8152 12.2704C20.7409 12.177 20.6454 12.1027 20.5366 12.0536C20.4278 12.0045 20.3088 11.9822 20.1896 11.9883Z"
+                                fill="#9698A0" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="form-group mb-3">
+                    <label>Passwort wiederholen</label>
+                    <div class="input-group">
+                        <input type="password" placeholder="Type your password" class="form-control">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.9953 3C8.34476 3 4.98114 4.63957 2.69355 7.17188C2.62751 7.24497 2.5765 7.33037 2.54346 7.42318C2.51042 7.51598 2.49597 7.61439 2.50096 7.71278C2.50595 7.81117 2.53027 7.90762 2.57253 7.99661C2.61479 8.0856 2.67416 8.1654 2.74726 8.23145C2.89489 8.36483 3.08946 8.43411 3.28817 8.42403C3.38656 8.41905 3.48301 8.39473 3.572 8.35247C3.66099 8.31021 3.74079 8.25083 3.80683 8.17773C5.81924 5.95004 8.79586 4.5 11.9953 4.5C15.1948 4.5 18.1771 5.95069 20.1945 8.17871C20.2598 8.2548 20.3396 8.31704 20.4293 8.36176C20.519 8.40648 20.6167 8.43277 20.7168 8.43908C20.8168 8.44538 20.9171 8.43158 21.0117 8.39848C21.1063 8.36538 21.1933 8.31365 21.2676 8.24636C21.3418 8.17907 21.4019 8.09757 21.4441 8.00668C21.4864 7.9158 21.51 7.81736 21.5136 7.7172C21.5171 7.61704 21.5006 7.51718 21.4649 7.42351C21.4292 7.32985 21.3752 7.24428 21.3059 7.17188C19.0132 4.63989 15.6459 3 11.9953 3ZM20.1896 11.9883C20.029 11.9965 19.8752 12.0563 19.7511 12.1586C19.6269 12.2609 19.539 12.4005 19.5002 12.5566C18.6975 15.5672 15.5395 18 11.9953 18C8.45109 18 5.30317 15.5684 4.50019 12.5566C4.46011 12.3977 4.3691 12.2563 4.24107 12.1541C4.11304 12.0518 3.95503 11.9942 3.79121 11.9902C3.67385 11.9874 3.55746 12.0121 3.4514 12.0624C3.34535 12.1128 3.25259 12.1873 3.18058 12.28C3.10857 12.3727 3.05933 12.481 3.03682 12.5963C3.01431 12.7115 3.01916 12.8304 3.05097 12.9434C3.2908 13.8429 3.69495 14.6842 4.21894 15.4502L2.79511 16.6367C2.7167 16.6989 2.65153 16.7762 2.60343 16.8639C2.55533 16.9517 2.52529 17.0482 2.51506 17.1477C2.50483 17.2473 2.51462 17.3479 2.54387 17.4436C2.57311 17.5393 2.62121 17.6282 2.68534 17.705C2.74947 17.7819 2.82832 17.8451 2.91725 17.891C3.00619 17.9369 3.10341 17.9645 3.20319 17.9722C3.30297 17.98 3.40328 17.9677 3.49823 17.936C3.59318 17.9044 3.68084 17.8541 3.75605 17.7881L5.25117 16.541C5.79427 17.1019 6.37696 17.5956 7.05488 18.0107L6.13789 19.5996C6.08862 19.685 6.05664 19.7792 6.04379 19.8769C6.03093 19.9746 6.03745 20.0739 6.06297 20.1691C6.08849 20.2642 6.13251 20.3535 6.19252 20.4316C6.25253 20.5098 6.32735 20.5754 6.41271 20.6247C6.49807 20.6739 6.59229 20.7059 6.69 20.7187C6.78771 20.7315 6.88699 20.725 6.98217 20.6994C7.07735 20.6739 7.16657 20.6299 7.24473 20.5698C7.32289 20.5098 7.38846 20.435 7.43769 20.3496L8.38691 18.7041C9.2935 19.0793 10.2364 19.3578 11.2502 19.4385V21.25C11.2488 21.3494 11.2671 21.4481 11.3042 21.5403C11.3413 21.6325 11.3963 21.7164 11.4661 21.7872C11.5359 21.858 11.619 21.9142 11.7107 21.9526C11.8024 21.9909 11.9008 22.0107 12.0002 22.0107C12.0996 22.0107 12.198 21.9909 12.2897 21.9526C12.3814 21.9142 12.4645 21.858 12.5343 21.7872C12.6041 21.7164 12.6591 21.6325 12.6962 21.5403C12.7332 21.4481 12.7516 21.3494 12.7502 21.25V19.4375C13.7629 19.356 14.7053 19.0773 15.6115 18.7021L16.5627 20.3496C16.6119 20.435 16.6775 20.5098 16.7557 20.5698C16.8338 20.6299 16.923 20.6739 17.0182 20.6994C17.1134 20.725 17.2127 20.7315 17.3104 20.7187C17.4081 20.7059 17.5023 20.6739 17.5877 20.6247C17.673 20.5754 17.7479 20.5098 17.8079 20.4316C17.8679 20.3535 17.9119 20.2642 17.9374 20.1691C17.9629 20.0739 17.9694 19.9746 17.9566 19.8769C17.9437 19.7792 17.9118 19.685 17.8625 19.5996L16.9445 18.0088C17.6222 17.5939 18.2042 17.1003 18.7473 16.54L20.2443 17.7881C20.3195 17.8541 20.4072 17.9044 20.5021 17.936C20.5971 17.9677 20.6974 17.98 20.7972 17.9722C20.897 17.9645 20.9942 17.9369 21.0831 17.891C21.1721 17.8451 21.2509 17.7819 21.315 17.705C21.3792 17.6282 21.4273 17.5393 21.4565 17.4436C21.4858 17.3479 21.4956 17.2473 21.4853 17.1477C21.4751 17.0482 21.445 16.9517 21.3969 16.8639C21.3489 16.7762 21.2837 16.6989 21.2053 16.6367L19.7805 15.4492C20.3047 14.6836 20.7097 13.8425 20.9494 12.9434C20.9822 12.8286 20.9871 12.7077 20.9638 12.5906C20.9404 12.4736 20.8895 12.3638 20.8152 12.2704C20.7409 12.177 20.6454 12.1027 20.5366 12.0536C20.4278 12.0045 20.3088 11.9822 20.1896 11.9883Z"
+                                fill="#9698A0" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actionbtn px-5">
+            <button mat-stroked-button class="" color="primary" (click)="modal.close('Close click')">Close</button>
+            <button mat-raised-button class="" color="primary" (click)="modal.close('Close click')">Save</button>
+        </div>
+    </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
