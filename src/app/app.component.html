@@ -1,2 +1,15 @@
 <!-- <app-login></app-login> -->
-<app-bus></app-bus>
+<!-- <router-outlet></router-outlet> -->
+
+<app-header></app-header>
+
+<div class="main-content">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+.aside {
+    width: 280px;
+    background-color: #ffffff;
+    color: #000000;
+    height: 100%;
+    position: fixed;
+    /* z-index: 1; */
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  

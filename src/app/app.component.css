@@ -1,0 +1,18 @@
+html, body, .app-root, .layout {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+  }
+  .content{
+    padding-left: 280px;
+    margin-top: 80px;
+  }
