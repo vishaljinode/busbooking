@@ -25,6 +25,7 @@ import { SidebarComponent } from './core/sidebar/sidebar.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { EmployeesComponent } from './Pages/employees/employees.component';
 import { CustomersComponent } from './Pages/customers/customers.component';
+import { SeatLayoutComponent } from './utils/seat-layout/seat-layout.component';
 
 
 
@@ -42,7 +43,8 @@ import { CustomersComponent } from './Pages/customers/customers.component';
     SidebarComponent,
     DashboardComponent,
     EmployeesComponent,
-    CustomersComponent
+    CustomersComponent,
+    SeatLayoutComponent
   ],
   imports: [
     BrowserModule,
